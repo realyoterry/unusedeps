@@ -1,0 +1,33 @@
+{
+    "name": "unusedeps",
+    "version": "1.0.0",
+    "description": "A CLI-based unused dependency remover.",
+    "main": "lib/index.cjs",
+    "scripts": {
+        "coverage": "npm run build && npx jest --coverage",
+        "build": "tsc -b tsconfig.json && node scripts",
+        "format": "prettier --write src/*.ts"
+    },
+    "type": "commonjs",
+    "author": "Terry Kim",
+    "license": "MIT",
+    "keywords": [
+        "usedeps",
+        "dependency",
+        "unused",
+        "clean",
+        "cleaner"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/realyoterry/usedep.git"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.10",
+        "prettier": "^3.5.1",
+        "typescript": "^5.7.3"
+    },
+    "bin": {
+        "usedeps": "dist/index.cjs"
+    }
+}

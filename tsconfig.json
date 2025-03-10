@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "target": "es2019",
+        "strict": true,
+        "module": "CommonJS",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "useUnknownInCatchVariables": false,
+        "skipLibCheck": true,
+        "checkJs": true,
+        "jsx": "preserve",
+        "outDir": "./lib",
+        "tsBuildInfoFile": ".tsbuildinfo",
+        "declaration": false
+    },
+    "include": [
+        "src"
+    ]
+}
