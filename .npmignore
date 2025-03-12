@@ -5,6 +5,7 @@
 /LICENSE
 /docs
 /src
+/test
 /.prettierrc
 /.gitignore
 /.prettierignore
