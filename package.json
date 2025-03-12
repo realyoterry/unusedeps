@@ -4,7 +4,7 @@
     "description": "A CLI-based unused dependency remover.",
     "main": "lib/index.cjs",
     "scripts": {
-        "coverage": "npm run build && npx jest --coverage",
+        "test": "npm run build && npx jest",
         "build": "tsc -b tsconfig.json && node scripts",
         "format": "prettier --write src/*.ts"
     },
@@ -12,11 +12,9 @@
     "author": "Terry Kim",
     "license": "MIT",
     "keywords": [
-        "unusedeps",
-        "dependency",
         "unused",
-        "clean",
-        "cleaner"
+        "dependency",
+        "remover"
     ],
     "repository": {
         "type": "git",
@@ -28,6 +26,9 @@
         "typescript": "^5.7.3"
     },
     "bin": {
-        "unusedeps": "dist/index.cjs"
+        "unusedeps": "lib/index.cjs"
+    },
+    "dependencies": {
+        "unusedeps": "^1.0.0"
     }
 }
