@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
-import { exec, execSync } from 'child_process';
+import { execFile, execFileSync } from 'child_process';
 
 // package.json dummy interface
 interface PackageJSON {
@@ -106,7 +106,7 @@ export function scriptUsed(dependency: string): boolean {
  */
 export function getGlobal(): string[] {
     try {
-        const result = execSync('npm ls -g --depth=0 --json').toString();
+        const result = execFileSync('npm', ['ls', '-g', '--depth=0', '--json'], { encoding: 'utf8', shell: true });
         const globalPackages: PackageJSON = JSON.parse(result);
         return Object.keys(globalPackages.dependencies || {});
     } catch (error) {
@@ -135,7 +135,7 @@ export function remove(dependencies: string[], global: boolean = false): void {
 
         const dep = dependencies[index];
 
-        exec(`npm uninstall ${dep} ${global ? '-g' : ''}`, (err, _, stderr) => {
+        execFile('npm', ['uninstall', dep, ...(global ? ['-g'] : [])], { shell: true }, (err, _, stderr) => {
             if (err) {
                 console.error(`\nError uninstalling ${dep}:`, stderr);
             } else {
