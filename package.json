@@ -1,10 +1,10 @@
 {
     "name": "unusedeps",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A CLI-based unused dependency remover.",
     "main": "lib/index.cjs",
     "scripts": {
-        "test": "npm run build && npx jest",
+        "start": "npm run build && node lib/index.cjs",
         "build": "tsc -b tsconfig.json && node scripts",
         "format": "prettier --write src/*.ts"
     },
@@ -27,8 +27,5 @@
     },
     "bin": {
         "unusedeps": "lib/index.cjs"
-    },
-    "dependencies": {
-        "unusedeps": "^1.0.0"
     }
 }
